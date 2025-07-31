@@ -1,166 +1,200 @@
+/* RESET GERAL */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
+/* ------------------ HEADER ------------------ */
 
-/* HEADER */
 header {
-    width: 100%;
-    height: 60px;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 1000;
+  width: 100%;
+  height: 60px;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+header img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 li {
-    display: inline;
+  display: inline;
 }
 
-/* LINKS */
 a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #490bf1;
+  color: #490bf1;
 }
 
+/* Botão hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background: #000;
+  display: block;
+  transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+nav {
+  display: flex;
+}
+
+/* ------------------ HERO ------------------ */
 
 .hero {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('imagens/main-principal.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('imagens/main-principal.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 40, 80, 0.5); /* Tom azulado com opacidade */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 60px; 
-    & h1 {
-        font-size: 3rem;
-        text-align: justify;
-    }
-    & p {
-        font-size: 1rem;
-    }
-
-    button {
-        margin-top: 8px;
-        height: 35px;
-        padding: 8px;
-        background-color: #c1b015c7;
-        border: none;
-        border-radius: 10px;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 40, 80, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px;
 }
 
-@media (max-width: 900px) {
-    .overlay h1 {
-        font-size: 2rem;
-    }
-
-    .overlay button {
-        height: 40px;
-    }
+.overlay h1 {
+  font-size: 3rem;
+  text-align: justify;
 }
 
-@media (max-width: 900px) {
-    .overlay h1 {
-        font-size: 1.5rem;
-    }
-    .overlay p {
-        font-size: .7rem;
-    }
+.overlay p {
+  font-size: 1rem;
 }
+
+.overlay button {
+  margin-top: 8px;
+  height: 35px;
+  padding: 8px 15px;
+  background-color: #c1b015c7;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ------------------ SECTION SOBRE ------------------ */
 
 .sectionSobre {
-    width: 100vw;
-    padding: 70px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
 .divSobre {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; 
-    gap: 20px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .divSobre h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .divSobre p {
-    font-size: 1rem;
-    line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .sectionSobre img {
-    width: 500px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
+
+/* ------------------ SECTION ATUAÇÃO ------------------ */
 
 .sectionAtuacao {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 10px;
   background-color: #0B2B3C;
   color: #fff;
-  & h2 {
-    font-size: 2.4rem;
-  }
+}
+
+.sectionAtuacao h2 {
+  font-size: 2.4rem;
 }
 
 .cards {
@@ -170,37 +204,22 @@ a:hover {
   gap: 20px;
 }
 
-/* Telas médias (2 cards por linha) */
-@media (max-width: 1024px) {
-  .cards {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-}
-
-/* Telas pequenas (1 por linha) */
-@media (max-width: 600px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .card {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 15px;
   width: 100%;
   max-width: 300px;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   backdrop-filter: blur(4px);
 }
 
 .card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+  background-color: rgba(255,255,255,0.1);
 }
 
 .card h3 {
@@ -208,97 +227,59 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 900px) {
-    .cards {
-        padding: 40px;
-    }
-  .card {
-    flex: 1 1 45%;
-    max-width: 85%;
-  }
-}
-
-@media (max-width: 600px) {
-    .cards {
-        align-items: center;
-        width: 100%;
-    }
-    .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  .whatsapp-btn {
-    width: 150px;
-  }
-}
-
+/* ------------------ SECTION CONTATO ------------------ */
 
 .sectionContato {
-    width: 100vw;
-    padding: 3rem;
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
+  width: 100%;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
 }
 
-@media (max-width: 900px) {
-    .sectionContato{
-        gap: 5px;
-        & img {
-            width: 400px;
-            margin: 0;
-        }
-        & .contato {
-            font-size: 5em;
-        }
-    }
-}
-
-@media (max-width: 600px) {
-    .sectionContato {
-        align-items: center;
-        flex-direction: column;
-    }
+.sectionContato img {
+  max-width: 50%;
+  height: 50%;
 }
 
 .contato {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    gap: 20px;
-    & h2 {
-        font-size: .9rem;
-        text-transform: uppercase;
-        font-weight: bolder;
-    }
-    & h3 {
-        font-size: 1.5rem;
-        text-transform: uppercase;
-    }
-    & p {
-        font-size: 1.2rem;
-    }
-    & button {
-        display: inline-block;
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-        background-color: #25D366;
-        width: 300px;
-    }
-    & button:hover {
-        background-color: #128C7E;
-    }
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 20px;
+}
+
+.contato h2 {
+  font-size: .9rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.contato h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.contato p {
+  font-size: 1.2rem;
+}
+
+.contato button {
+  display: inline-block;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #25D366;
+  width: 300px;
+  transition: background-color 0.3s ease;
+}
+
+.contato button:hover {
+  background-color: #128C7E;
 }
 
 .icon-btn {
@@ -312,98 +293,92 @@ a:hover {
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   cursor: pointer;
 }
+
 .icon-btn i {
   color: #6D6D6D;
   font-size: 20px;
 }
 
-.contatos{
-    background-color: #0B2B3C;
-    padding: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    flex-direction: row;
-    gap: 200px;
-    & h2 {
-        margin-top: 25px;
-    }
+.contatos {
+  background-color: #0B2B3C;
+  padding: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  width: 100%;
+}
+
+.contatos h2 {
+  margin-top: 25px;
 }
 
 .infor {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin: 6px;
-    & img{
-        width: 40px;
-    }
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin: 6px;
+}
 
-    & p {
-        padding: 4px;
-    }
+.infor img {
+  width: 40px;
+}
+
+.infor p {
+  padding: 4px;
 }
 
 .mensagem {
-    display: flex;
+  display: flex;
 }
 
 .mensagem form {
-    display: flex;
-    flex-direction: column;
-    & h2 {
-        font-size: 2.2em;
-    }
-    & label {
-        margin-top: 15px;
-        font-size: 1.4em;
-    }
-    & input {
-        height: 2.2rem;
-        margin: 2px;
-        padding: 7px;
-        border: none;
-        border-radius: 7px;
-    }
-    & textarea {
-        border: none;
-        border-radius: 7px;
-        padding: 7px;
-    }
-    & button {
-        margin: 10px;
-        height: 30px;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.2em;
-        text-align: center;
-        width: 50%;
-        cursor: pointer;
-    }
-        & button:hover {
-            transition: 0.5s;
-            padding: 3px;
-            height: 35px;
-            background-color: #fbb040;
-        }
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 900px) {
-    .contatos {
-        margin-top: 70px;
-        flex-direction: column;
-        align-items: center;
-        gap: 100px;
-    }
+.mensagem form h2 {
+  font-size: 2.2em;
 }
 
-@media (max-width: 600px) {
-    .contatos {
-        gap: 50px;
-    }
+.mensagem form label {
+  margin-top: 15px;
+  font-size: 1.4em;
 }
+
+.mensagem form input,
+.mensagem form textarea {
+  border: none;
+  border-radius: 7px;
+  padding: 7px;
+}
+
+.mensagem form input {
+  height: 2.2rem;
+  margin: 2px;
+}
+
+.mensagem form button {
+  margin: 10px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+}
+
+.mensagem form button:hover {
+  transition: 0.5s;
+  padding: 3px;
+  height: 35px;
+  background-color: #fbb040;
+}
+
+/* ------------------ FOOTER ------------------ */
 
 .footer {
   background-color: #0B2B3C;
@@ -411,3 +386,165 @@ a:hover {
   padding: 20px;
   font-size: 14px;
 }
+
+/* ------------------ MEDIA QUERIES ------------------ */
+
+/* 1) Mínimo */
+@media (max-width: 500px) {
+  .sectionContato {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+    & h2{
+      font-size: 1.5rem;
+    }
+  }
+
+  .contato {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contatos {
+  padding: 25px;
+  font: .8rem;
+}
+
+/* 2) 600px */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .overlay {
+    gap: 6px;
+    align-items: center;
+  }
+
+  .overlay h1 {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .sectionContato {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contatos {
+    padding: 11px;
+    & p{
+      font-size: 1.1rem;
+    }
+    & img {
+      width: 25px;
+    }
+  }
+
+  .contatos {
+    gap: 50px;
+  }
+}
+
+/* 3) 768px */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 200px;
+    height: calc(100% - 60px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    transition: right 0.3s ease;
+  }
+
+  nav.active {
+    right: 0;
+  }
+}
+
+/* 4) 900px */
+@media (max-width: 900px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .overlay button {
+    height: 40px;
+  }
+
+  .divSobre {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cards {
+    padding: 10px;
+    margin: 15px;
+  }
+
+  .card {
+    max-width: 85%;
+  }
+
+  .sectionContato {
+    gap: 5px;
+  }
+
+  .sectionContato img {
+    width: 400px;
+    margin: 0;
+  }
+
+  .contatos {
+    margin-top: 70px;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+  }
+}
+
+/* 5) 1024px */
+@media (max-width: 1024px) {
+  .cards {
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .sectionAtuacao {
+   padding: 30px;
+  }
+
+  .sectionContato h2 {
+    font-size: 2.4rem;
+    font-weight: bolder;
+  }
+}
+

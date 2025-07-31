@@ -8,17 +8,25 @@
 </head>
 <body>
     <header>
-    <img src="#" alt="imagem da logo">
+  <img src="/imagens/img-fake.webp" alt="imagem da logo">
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre Mim</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+  <!-- Botão do menu hamburguer -->
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre Mim</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 </header>
+
 
     <main>
        <section class="hero" id="inicio">
@@ -134,6 +142,11 @@
     <footer class="footer">
   <p>&copy; 2025 Todos os direitos reservados.</p>
 </footer>
-    
+    <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('nav').classList.toggle('active');
+  });
+</script>
 </body>
 </html>
