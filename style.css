@@ -125,8 +125,9 @@ nav {
 }
 
 .overlay h1 {
-  font-size: 3rem;
-  text-align: justify;
+  font-size: 1.2em;
+  text-align: left;
+  margin-bottom: 1em;
 }
 
 .overlay p {
@@ -164,11 +165,6 @@ nav {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-}
-
-.divSobre h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
 }
 
 .divSobre p {
@@ -252,9 +248,10 @@ nav {
 }
 
 .contato h2 {
-  font-size: .9rem;
+  font-size: 2em;
   text-transform: uppercase;
   font-weight: bolder;
+  margin-bottom: 2em;
 }
 
 .contato h3 {
@@ -402,9 +399,6 @@ nav {
     text-align: center;
     padding: 20px 10px;
     margin-top: 20px;
-    & h2{
-      font-size: 1.5rem;
-    }
   }
 
   .contato {
@@ -429,11 +423,6 @@ nav {
   .overlay {
     gap: 6px;
     align-items: center;
-  }
-
-  .overlay h1 {
-    font-size: 1rem;
-    text-align: left;
   }
 
   .overlay p {
@@ -497,12 +486,12 @@ nav {
 
 /* 4) 900px */
 @media (max-width: 900px) {
-  .overlay h1 {
-    font-size: 2rem;
-  }
-
   .overlay button {
     height: 40px;
+  }
+
+  .overlay h1 {
+    font-size: 1.5em;
   }
 
   .divSobre {
@@ -538,19 +527,18 @@ nav {
 }
 
 /* 5) 1024px */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .cards {
     flex-wrap: wrap;
     margin: 20px;
   }
+  
+  .overlay h1 {
+    font-size: 1.5em;
+  }
 
   .sectionAtuacao {
    padding: 30px;
-  }
-
-  .sectionContato h2 {
-    font-size: 2.4rem;
-    font-weight: bolder;
   }
 }
 
