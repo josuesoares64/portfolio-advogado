@@ -387,6 +387,12 @@ nav {
   font-size: 14px;
 }
 
+.SiteProfissional {
+  color: #fbb040;
+  font-size: .9rem;
+  font-weight: 400;
+}
+
 /* ------------------ MEDIA QUERIES ------------------ */
 
 /* 1) Mínimo */
