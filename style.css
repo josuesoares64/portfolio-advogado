@@ -173,9 +173,8 @@ nav {
 }
 
 .sectionSobre img {
-  width: 500px;
-  max-width: 100%;
-  height: auto;
+  width: 50%;
+  height: 10%;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -236,6 +235,7 @@ nav {
 }
 
 .sectionContato img {
+  border-radius: 5px;
   max-width: 50%;
   height: 50%;
 }
@@ -399,6 +399,10 @@ nav {
     text-align: center;
     padding: 20px 10px;
     margin-top: 20px;
+  }
+
+  .sectionSobre img {
+    width: 70%;
   }
 
   .contato {
